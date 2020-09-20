@@ -86,20 +86,20 @@ export const Tablero = () => {
         let vector2 = [];
         let vector3 = [];
 
-        conjuntoCeldas.map((celda, i) => {
+                conjuntoCeldas.map((celda, i) => {
 
-            if (celda.fila === 0 && celda.columna < 4) {
-                vector1.push(celda)
-            }
-            if (celda.fila === 1 && celda.columna < 4) {
-                vector2.push(celda)
-            }
-            if (celda.fila === 2 && celda.columna < 4) {
-                vector3.push(celda)
-            }
-
-
-        })
+                    if (celda.fila === 0 && celda.columna > 2) {
+                        vector1.push(celda)
+                    }
+                    if (celda.fila === 1 && celda.columna > 2) {
+                        vector2.push(celda)
+                    }
+                    if (celda.fila === 2 && celda.columna > 2) {
+                        vector3.push(celda)
+                    }
+                })
+          
+        
 
         sectorACtivo.push(vector1, vector2, vector3);
         console.log('el sector activo es', sectorACtivo[0][0])
@@ -244,6 +244,9 @@ export const Tablero = () => {
                             <button
                                 className="btn btn-blovk btn-primary"
                                 onClick={() => { test([0, 1], 5) }}> prueba cambiarvalor</button>
+                                 <button
+                                className="btn btn-blovk btn-primary"
+                                 onClick={()=> activarSector(2)}> prueba cambiarvalor</button>
                         </div>
 
 
